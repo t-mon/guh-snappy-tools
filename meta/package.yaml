@@ -1,0 +1,41 @@
+name: guh
+version: 0.1.2
+vendor: Simon Stürz <simon.stuerz@guh.guru>
+architecture: [armhf]
+icon: meta/guh-logo.svg
+source: https://github.com/guh/guh
+license-version: "GPLv2"
+services:
+ - name: guhd
+   start: ./usr/bin/guhd-wrapper.sh
+   description: "Daemon for the guh home automation systems"
+   security-template: unconfined
+   caps:
+    - networking
+    - network-service
+ - name: webserver
+   start: ./usr/bin/guh-webserver
+   description: "The guh REST-API webserver"
+   security-template: unconfined
+   caps:
+    - networking
+    - network-service
+binaries:
+ - name: guh-cli
+   exec: ./usr/bin/guh-cli
+   description: "Command line interface for guh"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
