@@ -1,5 +1,5 @@
 name: guhio
-version: 0.1.7
+version: 0.1.13
 type: app
 vendor: Simon Stürz <simon.stuerz@guh.guru>
 architecture: ["armhf"]
@@ -10,14 +10,10 @@ services:
   - name: guhd
     start: usr/bin/guhd-wrapper.sh
     description: "Daemon for the guh IoT server"
-    security-template: unconfined
     ports:
         internal:
             jsonrpc:
                 port: 2222/tcp
-                negotiable: yes
-            avahi:
-                port: 5353/udp
                 negotiable: yes
         external:
             ui:
@@ -25,9 +21,6 @@ services:
                 negotiable: no
             websocket:
                 port: 4444/tcp
-                negotiable: yes
-            upnp:
-                port: 1900/udp
                 negotiable: yes
 binaries:
   - name: guh-cli
