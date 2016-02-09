@@ -1,11 +1,10 @@
 name: guhio
-version: 0.1.13
+version: 0.1.1
 type: app
 vendor: Simon Stürz <simon.stuerz@guh.guru>
-architecture: ["armhf"]
+architectures: ["armhf"]
 icon: meta/guh-logo.svg
 source: https://github.com/guh/guh
-license-version: "GPLv2"
 services:
   - name: guhd
     start: usr/bin/guhd-wrapper.sh
